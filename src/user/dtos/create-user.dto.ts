@@ -7,4 +7,6 @@ export class CreateUserDto {
   readonly email: string;
   @IsString()
   readonly country: string;
+  @IsString()
+  readonly password: string;
 }
