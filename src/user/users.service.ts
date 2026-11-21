@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { UserEntity } from './user-entity';
+import { UserResponseDto } from './dtos/user-response.dto';
 
 @Injectable()
 export class UsersService {
@@ -10,7 +11,7 @@ export class UsersService {
       id: (this.users.length + 1).toString(),
     };
     this.users.push(newUser);
-    return newUser;
+    return new UserResponseDto(newUser);
   }
   findAll(): UserEntity[] {
     return this.users;

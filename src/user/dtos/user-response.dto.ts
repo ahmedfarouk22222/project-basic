@@ -10,4 +10,7 @@ export class UserResponseDto {
   readonly country: string;
   @Exclude()
   readonly password: string;
+  constructor(partial: Partial<UserResponseDto>) {
+    Object.assign(this, partial);
+  }
 }
